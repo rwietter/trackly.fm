@@ -37,11 +37,26 @@ bun run dev
 ## Built With
 
 - [TypeScript](https://www.typescriptlang.org/) - The language used
-- [Bun](https://bun.sh/) - The framework used
+- [Bun](https://bun.sh/) - A runtime for TypeScript
+- [Elysia](https://elysiajs.com/) - A TypeScript framework for building APIs
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Consuming the API
+
+Send a GET request for the following example URL to get the currently playing track for your Last.fm account.
+
+```
+curl -X GET 'http://localhost:3000/song?key=<lastfm-key>&user=<lasfm-user>' | jq
+```
+
+Example
+
+```
+curl -X GET 'http://localhost:3000/song?key=abc1234d56e78f91g23456h7i8jklm9n&user=rwietter' | jq
+```
 
 ## License
 

@@ -4,15 +4,16 @@ import { api } from "../services/api";
 
 const validator = {
   query: t.Object({
-    key: t.String()
+    key: t.String(),
+    user: t.String(),
   }),
 }
 
 export default async (app: Elysia) => {
   app.get(
-    "/song/:user",
+    "/song",
     async (context) => {
-      const username = context.params.user
+      const username = context.query.user
       const key = context.query.key
 
       const response = await fetch(api({ username, key }))
